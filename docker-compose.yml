@@ -1,0 +1,22 @@
+services:
+  # ----------------------------
+  # Vue 3 Frontend (Vite Dev Server)
+  # ----------------------------
+  vs_papara_frontend:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: vs-papara
+    restart: unless-stopped
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - /app/node_modules     # avoids permission issues
+    ports:
+      - "5173:5173"           # Vite dev server
+    networks:
+      - papara_net
+
+networks:
+  papara_net:
+    driver: bridge

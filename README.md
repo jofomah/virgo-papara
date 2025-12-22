@@ -18,6 +18,12 @@ docker composer up -d --build OR npm install && npm run dev (to install dependen
 
 - Visit `http://localhost:5173/`
 
+# Docker approach
+
+- `docker exec -it vs-papara sh` enter the container shell.
+
+
+
 ### Compile and Minify for Production
 
 ```sh

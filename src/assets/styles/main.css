@@ -1,0 +1,43 @@
+@import './fonts.css';
+@import "tailwindcss";
+
+/* =========================
+   DESIGN TOKENS (Papara)
+   ========================= */
+@theme {
+  /* Colors */
+  --color-bg: #0b0d10;
+  --color-surface: #15181d;
+  --color-surface-soft: #1c2026;
+  --color-border-soft: #23272e;
+
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #9ca3af;
+  --color-text-muted: #6b7280;
+
+  --color-accent: #facc15;
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+  --color-badge: #dc2626;
+
+  /* Icon background */
+  --color-icon-bg: #2a2f36;
+
+  /* Radius */
+  --radius-card: 16px;
+  --radius-pill: 999px;
+
+  /* Fonts */
+  --font-primary: Inter, system-ui, -apple-system, sans-serif;
+}
+
+/* =========================
+   BASE TYPOGRAPHY
+   ========================= */
+@layer base {
+  body {
+    font-family: var(--font-primary);
+    background: var(--color-bg);
+    color: var(--color-text-primary);
+  }
+}

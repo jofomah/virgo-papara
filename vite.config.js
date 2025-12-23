@@ -11,6 +11,9 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "@components": fileURLToPath(
+        new URL("./src/components", import.meta.url)
+      ),
       "@fonts": fileURLToPath(new URL("./src/assets/fonts", import.meta.url)),
     },
   },

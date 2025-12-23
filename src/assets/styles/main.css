@@ -21,7 +21,7 @@
   --color-badge: #dc2626;
 
   /* Icon background */
-  --color-icon-bg: #2a2f36;
+  --color-icon-bg: #323232;
 
   /* Radius */
   --radius-card: 16px;
@@ -29,6 +29,10 @@
 
   /* Fonts */
   --font-primary: Inter, system-ui, -apple-system, sans-serif;
+
+  /* Font size */
+  --text-xxs: 0.625rem; /* 10px */
+  --text-xxxs: 0.5rem; /* 10px */
 }
 
 /* =========================

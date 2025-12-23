@@ -45,3 +45,17 @@
     color: var(--color-text-primary);
   }
 }
+
+/* =========================
+   UTILITIES
+   ========================= */
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;     /* IE & old Edge */
+    scrollbar-width: none;        /* Firefox */
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;                /* Chrome, Safari */
+  }
+}

@@ -15,6 +15,7 @@ export default defineConfig({
         new URL("./src/components", import.meta.url)
       ),
       "@fonts": fileURLToPath(new URL("./src/assets/fonts", import.meta.url)),
+      "@layouts": fileURLToPath(new URL("./src/layouts", import.meta.url)),
     },
   },
 });

@@ -1,0 +1,13 @@
+<template>
+    <svg xmlns="http://www.w3.org/2000/svg" :class="cls" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+    </svg>
+</template>
+<script setup>
+defineProps({
+  cls: {
+    type: String,
+    default: 'w-6 h-6'
+  }
+})
+</script>

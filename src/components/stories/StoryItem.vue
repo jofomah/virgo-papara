@@ -20,7 +20,7 @@ defineProps({
 });
 </script>
 <template>
-    <div class="flex flex-col items-center gap-2 shrink-0 w-[66px]">
+    <div class="flex flex-col items-center gap-2 shrink-0 w-[74px]">
         <div class="relative h-14 w-14 rounded-full flex items-center justify-center">
             <div class="inset-0 rounded-full border-2 border-white/90 overflow-hidden">
                 <div class="h-14 w-14">

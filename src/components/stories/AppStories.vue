@@ -19,7 +19,7 @@ defineProps({
 });
 </script>
 <template>
-    <section class="flex overflow-x-auto gap-3 px-4 py-4 no-scrollbar scroll-smooth">
+  <section class="flex justify-start overflow-x-auto gap-3 px-4 py-4 no-scrollbar scroll-smooth">
         <StoryItem
             v-for="story in stories"
             :key="story.id" 

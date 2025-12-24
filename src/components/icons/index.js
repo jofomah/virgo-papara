@@ -7,6 +7,7 @@ import QrIcon from "./QrIcon.vue";
 import TransferIcon from "./TransferIcon.vue";
 import UserIcon from "./UserIcon.vue";
 import PinIcon from "./PinIcon.vue";
+import SendIcon from "./SendIcon.vue";
 
 export const icons = {
   card: CardIcon,
@@ -18,4 +19,5 @@ export const icons = {
   transfer: TransferIcon,
   user: UserIcon,
   pin: PinIcon,
+  send: SendIcon,
 };

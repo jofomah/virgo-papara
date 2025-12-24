@@ -23,6 +23,10 @@
   /* Icon background */
   --color-icon-bg: #323232;
 
+  /* Cards */ 
+  --color-card-surface: #1e1e1e;
+  --size-card-lg: 280px; /* For Main Account cards */
+
   /* Radius */
   --radius-card: 16px;
   --radius-pill: 999px;
@@ -57,5 +61,11 @@
 
   .no-scrollbar::-webkit-scrollbar {
     display: none;                /* Chrome, Safari */
+  }
+
+  .carousel-track {
+    transform: translateX(
+      calc(var(--carousel-index) * var(--carousel-step, -100%))
+    );
   }
 }

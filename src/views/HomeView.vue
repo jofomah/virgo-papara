@@ -7,6 +7,7 @@ import Account from '@components/features/AccountCard/Account.vue';
 import InvestmentAccount from '@components/features/InvestmentCard/InvestmentAccount.vue';
 import DollarAccount from '@components/features/DollarAccount/DollarAccount.vue';
 import PreciousMetalAccount from '@components/features/PreciousMetalAccount/PreciousMetalAccount.vue';
+import SavingsAccount from '@components/features/SavingsAccount/SavingsAccount.vue';
 
 import { InvestmentImages } from '@images/investments';
 
@@ -62,13 +63,24 @@ const carouselItems = [
             linkText: 'Kıymetli Madenler Hesabı Aç'
         }
     },
+    {
+        id: 5,
+        type: 'savings',
+        data: {
+            title: 'Birikim Hesabı',
+            subtitle: 'Hedef belirle, birikim yap.',
+            ctaTo: '',
+            linkText: 'Birikim Hesabı Aç'
+        }
+    },
 ];
 
 const componentMap = {
     account: Account,
     investment: InvestmentAccount,
     dollar_account: DollarAccount,
-    precious_metal: PreciousMetalAccount
+    precious_metal: PreciousMetalAccount,
+    savings: SavingsAccount
 }
 
 </script>

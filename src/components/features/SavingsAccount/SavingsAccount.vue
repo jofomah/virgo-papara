@@ -1,7 +1,7 @@
 <script setup>
 import CtaLink from '@components/features/ui/CtaLink.vue';
-import PreciousMetal from '@images/precious-metals/precious-metal.png';
-import goldBars from '@images/precious-metals/gold-bars.png';
+import savingsLogo from '@images/savings/savings-logo.png';
+import savings from '@images/savings/savings.png';
 
 defineProps({
     title: String,
@@ -22,11 +22,12 @@ defineProps({
 
       /* center on large screens */
       lg:mx-auto">
+
         <div class="flex items-start justify-between gap-4">
             <div class="flex-1">
                 <div class="mb-3 flex items-center gap-3">
                     <div class="flex h-7 w-7 items-center justify-center overflow-hidden">
-                        <img :src="PreciousMetal" alt="precious metals" />
+                        <img :src="savingsLogo" alt="saving account icon" />
                     </div>
                 </div>
 
@@ -41,13 +42,13 @@ defineProps({
 
             <div class="shrink-0">
                 <img
-                    :src="goldBars"
+                    :src="savings"
                     alt="Precious metal gold bars"
                     class="h-20 w-20"
                 />
             </div>
         </div>
 
-        <CtaLink class="mt-5" :link-text="linkText" :to="ctaTo"/> 
+        <CtaLink class="mt-5" :link-text="linkText" :to="ctaTo"/>
     </div>
 </template>

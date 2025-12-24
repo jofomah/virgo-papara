@@ -5,6 +5,7 @@ import CarouselItem from '@components/carousel/CarouselItem.vue';
 
 import Account from '@components/features/AccountCard/Account.vue';
 import InvestmentAccount from '@components/features/InvestmentCard/InvestmentAccount.vue';
+import DollarAccount from '@components/features/DollarAccount/DollarAccount.vue';
 import { InvestmentImages } from '@images/investments';
 
 import AppStories from '@components/stories/AppStories.vue';
@@ -35,14 +36,18 @@ const carouselItems = [
                 { title: 'NYSE', img: InvestmentImages.nyse },
                 { title: 'Borsa İstanbul', img: InvestmentImages.borsa }
             ],
-            ctaTo: "/investment/create"
+            ctaTo: "/investment/create",
+            linkText: 'Yatırım Hesabı Oluştur'
         }
     },
     {
         id: 3,
-        type: 'investment',
+        type: 'dollar_account',
         data: {
-            number: '**** 1234'
+            title: "Dollar Hesabı",
+            subtitle: "Yatırım işlemleri için dolar al / sat.",
+            ctaTo: "/dollar-account/create",
+            linkText: 'Yatırım Hesabı Oluştur'
         }
     },
     { id: 4, type: 'investment', data: { number: '**** 1234' } },
@@ -52,6 +57,7 @@ const carouselItems = [
 const componentMap = {
     account: Account,
     investment: InvestmentAccount,
+    dollar_account: DollarAccount
 }
 
 </script>

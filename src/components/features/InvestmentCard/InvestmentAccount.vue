@@ -1,14 +1,15 @@
 <script setup>
-import InvestmentCTA from './InvestmentCta.vue';
 import InvestmentMarkets from './InvestmentMarkets.vue'
 import { InvestmentImages } from '@images/investments';
+import CtaLink from '@components/features/ui/CtaLink.vue';
 
 defineProps({
     markets: Array,
     title: String,
     subtitle: String,
-    ctaTo: String
-})
+    ctaTo: String,
+    linkText: String
+});
 </script>
 
 <template>
@@ -55,6 +56,6 @@ defineProps({
             </div>
         </div>
 
-        <InvestmentCTA class="mt-5" />
+        <CtaLink class="mt-5" :link-text="linkText" :to="ctaTo" />
     </div>
 </template>

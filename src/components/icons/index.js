@@ -8,6 +8,7 @@ import TransferIcon from "./TransferIcon.vue";
 import UserIcon from "./UserIcon.vue";
 import PinIcon from "./PinIcon.vue";
 import SendIcon from "./SendIcon.vue";
+import RightAngleIcon from "./RightAngleIcon.vue";
 
 export const icons = {
   card: CardIcon,
@@ -20,4 +21,5 @@ export const icons = {
   user: UserIcon,
   pin: PinIcon,
   send: SendIcon,
+  "right-angle": RightAngleIcon,
 };

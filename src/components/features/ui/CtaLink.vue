@@ -1,8 +1,13 @@
 <script setup>
-import Button from '@components/ui/Button.vue'
+import Button from '@components/ui/Button.vue';
+import Icon from '@/components/ui/Icon.vue';
 
 defineProps({
   to: {
+    type: String,
+    required: true
+  },
+  linkText: {
     type: String,
     required: true
   }
@@ -21,7 +26,7 @@ defineProps({
     </div>
    
     <template #icon>
-      <span class="text-lg">›</span>
+      <Icon name="right-angle" />
     </template>
   </Button>
 </template>

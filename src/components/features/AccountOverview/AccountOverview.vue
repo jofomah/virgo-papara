@@ -22,20 +22,9 @@ const accountBalance = computed(() => `${currentAccount.currencySymbol}${current
 </script>
 
 <template>
-    <div class="h-full w-full
-      rounded-2xl bg-card-surface text-white shadow-sm
-    
-      /* padding scales */
-      px-5 py-4
-      sm:px-6 sm:py-5
-      md:px-7 md:py-6
+    <div class="flex h-full w-full flex-col justify-between text-white">
+        <OverviewHeader :current-symbol="currentSymbol" :title="title" :account-balance="accountBalance" />
 
-      /* center on large screens */
-      lg:mx-auto">
-        <div class="flex h-full w-full flex-col justify-between text-white">
-            <OverviewHeader :current-symbol="currentSymbol" :title="title" :account-balance="accountBalance" />
-
-            <AccountList :accounts="accounts" />
-        </div>
+        <AccountList :accounts="accounts" />
     </div>
 </template>

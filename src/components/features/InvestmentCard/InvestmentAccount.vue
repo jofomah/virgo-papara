@@ -13,16 +13,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="h-full w-full
-      rounded-2xl bg-card-surface text-white shadow-sm
-    
-      /* padding scales */
-      px-5 py-4
-      sm:px-6 sm:py-5
-      md:px-7 md:py-6
-
-      /* center on large screens */
-      lg:mx-auto">
+    <div>
         <div class="flex items-start justify-between gap-4">
             <div class="flex-1">
                 <div class="mb-3 flex items-center gap-3">

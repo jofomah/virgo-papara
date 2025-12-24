@@ -13,20 +13,7 @@ defineProps({
 </script>
 
 <template>
-  <div
-    class="
-      h-full w-full
-      rounded-2xl bg-card-surface text-white shadow-sm
-    
-      /* padding scales */
-      px-5 py-4
-      sm:px-6 sm:py-5
-      md:px-7 md:py-6
-
-      /* center on large screens */
-      lg:mx-auto
-    "
-  >
+  <div>
     <AccountHeader
       :title="title"
       :country-code="countryCode"
@@ -52,26 +39,3 @@ defineProps({
     <ActionButtons class="pt-5 md:pt-6" />
   </div>
 </template>
-
-
-<!-- <template>
-  
-  <div class="h-[190px] rounded-2xl bg-[#1e1e1e] p-5 text-white">
-    <p class="text-xs text-white/60 mb-1">
-      {{ data.type }}
-    </p>
-
-    <h2 class="text-2xl font-semibold mb-6">
-      {{ data.balance }}
-    </h2>
-
-    <div class="flex gap-3">
-      <button class="flex-1 h-11 rounded-xl bg-black/50">
-        Yatır / Çek
-      </button>
-      <button class="flex-1 h-11 rounded-xl bg-black/50">
-        Gönder
-      </button>
-    </div>
-  </div>
-</template> -->

@@ -11,7 +11,18 @@ const { slides } = useHomeCarousel();
     <section class="w-full px-4 mb-6">
         <Carousel :items="slides" :peek="true">
             <CarouselItem v-for="slide in slides" :key="slide.id">
-                <component :is="slide.component" v-bind="slide.props" />
+                <div class="h-full w-full
+                    rounded-2xl bg-card-surface text-white shadow-sm
+    
+                    /* padding scales */
+                    px-5 py-4
+                    sm:px-6 sm:py-5
+                    md:px-7 md:py-6
+
+                    /* center on large screens */
+                    lg:mx-auto">
+                    <component :is="slide.component" v-bind="slide.props" />
+                </div>
             </CarouselItem>
         </Carousel>
     </section>

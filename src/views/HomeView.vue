@@ -8,8 +8,8 @@ import InvestmentAccount from '@components/features/InvestmentCard/InvestmentAcc
 import DollarAccount from '@components/features/DollarAccount/DollarAccount.vue';
 import PreciousMetalAccount from '@components/features/PreciousMetalAccount/PreciousMetalAccount.vue';
 import SavingsAccount from '@components/features/SavingsAccount/SavingsAccount.vue';
+import AccountOverview from '@/components/features/AccountOverview.vue';
 
-import { InvestmentImages } from '@images/investments';
 
 import AppStories from '@components/stories/AppStories.vue';
 import { useStoriesStore } from '@/stores/stories';
@@ -17,13 +17,29 @@ import { useStoriesStore } from '@/stores/stories';
 const storiesStore = useStoriesStore();
 
 // TODO: move to store
+const localAccountTitle = 'Türk Lirası Hesabı';
+const localAccountBalance = '0,00';
+const localCurrencySymbol = '₺';
+
+// precious metal account
+const preciousMetalTitle = 'Kıymetli Madenler';
+const investmentAccountTitle = 'Yatırım Hesabı';
+const savingsAccountTitle = 'Birikim Hesabı';
+
+
+// account assets
+import { flagImages } from '@/assets/images/flags';
+import goldBars from '@images/precious-metals/gold-bars.png';
+import { InvestmentImages } from '@images/investments';
+import savingsLogo from '@images/savings/savings-logo.png';
+
 const carouselItems = [
     {
         id: 1,
         type: 'account',
         data: {
-            title: 'Türk Lirası Hesabı',
-            balance: '₺0,00',
+            title: localAccountTitle,
+            balance: `${localCurrencySymbol}${localAccountBalance}`,
             countryCode: 'tr',
             iban: 'TR05 ****'
         }
@@ -32,7 +48,7 @@ const carouselItems = [
         id: 2,
         type: 'investment',
         data: {
-            title: "Yatırım Hesabı",
+            title: investmentAccountTitle,
             subtitle: "Hisse senedi al / sat",
             markets: [
                 { title: 'Nasdaq', img: InvestmentImages.nasdaq },
@@ -57,7 +73,7 @@ const carouselItems = [
         id: 4,
         type: 'precious_metal',
         data: {
-            title: 'Kıymetli Madenler',
+            title: preciousMetalTitle,
             subtitle: '(Altın, Gümüş, Platin)',
             ctaTo: '',
             linkText: 'Kıymetli Madenler Hesabı Aç'
@@ -67,12 +83,57 @@ const carouselItems = [
         id: 5,
         type: 'savings',
         data: {
-            title: 'Birikim Hesabı',
+            title: savingsAccountTitle,
             subtitle: 'Hedef belirle, birikim yap.',
             ctaTo: '',
             linkText: 'Birikim Hesabı Aç'
         }
     },
+    {
+        id: 6,
+        type: 'account_overview',
+        data: {
+            title: 'Tüm Varlıklarım',
+            accountBalances: [
+                { currencySymbol: '₺', balance: localAccountBalance },
+                { currencySymbol: '$', balance: null }
+            ],
+            accounts: [
+                {
+                    id: 1,
+                    title: localAccountTitle,
+                    balance: localAccountBalance,
+                    symbol: localCurrencySymbol,
+                    icon: flagImages.tr
+                },
+                {
+                    id: 2,
+                    title: preciousMetalTitle,
+                    balance: null,
+                    symbol: null,
+                    icon: {
+                        src: goldBars
+                    }
+                },
+                {
+                    id: 3,
+                    title: investmentAccountTitle,
+                    balance: null,
+                    symbol: null,
+                    icon: InvestmentImages.chart
+                },
+                {
+                    id: 4,
+                    title: savingsAccountTitle,
+                    balance: null,
+                    symbol: null,
+                    icon: {
+                        src: savingsLogo
+                    }
+                }
+            ]
+        }
+    }
 ];
 
 const componentMap = {
@@ -80,7 +141,8 @@ const componentMap = {
     investment: InvestmentAccount,
     dollar_account: DollarAccount,
     precious_metal: PreciousMetalAccount,
-    savings: SavingsAccount
+    savings: SavingsAccount,
+    account_overview: AccountOverview
 }
 
 </script>

@@ -4,10 +4,42 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from "@tailwindcss/vite";
+import { VitePWA } from "vite-plugin-pwa";
+
+const pwa = VitePWA({
+  registerType: "autoUpdate",
+
+  devOptions: {
+    enabled: true, // Important for dev testing
+  },
+
+  manifest: {
+    name: "Papara Fintech",
+    short_name: "Papara",
+    description: "Papara PWA",
+    theme_color: "#0B0D10",
+    background_color: "#0B0D10",
+    display: "standalone",
+    start_url: "/",
+
+    icons: [
+      {
+        src: "/pwa-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        src: "/pwa-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
+    ],
+  },
+});
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue(), tailwindcss(), vueDevTools()],
+  plugins: [vue(), tailwindcss(), vueDevTools(), pwa],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

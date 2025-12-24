@@ -7,7 +7,8 @@ import InvestmentAccount from '@components/features/InvestmentCard/InvestmentAcc
 import DollarAccount from '@components/features/DollarAccount/DollarAccount.vue';
 import PreciousMetalAccount from '@components/features/PreciousMetalAccount/PreciousMetalAccount.vue';
 import SavingsAccount from '@components/features/SavingsAccount/SavingsAccount.vue';
-import AccountOverview from '@/components/features/AccountOverview.vue';
+//import AccountOverview from '@/components/features/Acc AccountOverview.vue';
+import AccountOverview from '@components/features/AccountOverview/AccountOverview.vue';
 
 // TODO: move to store
 const localAccountTitle = 'Türk Lirası Hesabı';

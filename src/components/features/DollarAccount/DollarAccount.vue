@@ -1,7 +1,9 @@
 <script setup>
+import FeatureSlideLayout from '@components/features/FeatureSlide/FeatureSlideLayout.vue';
+import FeatureSlideCTA from '@components/features/FeatureSlide/FeatureSlideCTA.vue';
+
 import FlagIcon from '@components/ui/FlagIcon.vue';
 import DollarWallet from '@images/dollar-accounts/dollar_wallet.png'
-import CtaLink from '@components/features/ui/CtaLink.vue';
 
 const countryCode = 'us';
 
@@ -13,36 +15,17 @@ defineProps({
 });
 </script>
 <template>
-    <div>
-        <div class="flex items-start justify-between gap-4">
-            <div class="flex-1">
-                <!-- Flag Row -->
-                <div class="mb-3 flex items-center gap-3">
-                    <!-- US Flag -->
-                    <div class="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full">
-                        <FlagIcon :country-code="countryCode" />
-                    </div>
-                </div>
+    <FeatureSlideLayout :title="title" :subtitle="subtitle">
+        <template #context>
+            <FlagIcon :country-code="countryCode" />
+        </template>
 
-                <h2 class="mb-1 text-xl font-semibold leading-tight w-16">
-                    {{ title }}
-                </h2>
+        <template #illustration>
+            <img :src="DollarWallet" class="h-20 w-20" />
+        </template>
 
-                <!-- Subtitle -->
-                <p class="text-sm text-white/60">
-                    {{ subtitle }}
-                </p>
-            </div>
-
-            <div class="shrink-0">
-                <img
-                    :src="DollarWallet"
-                    alt="Dollar account illustration"
-                    class="h-20 w-20"
-                />
-            </div>
-        </div>
-
-        <CtaLink class="mt-5" :link-text="linkText" :to="ctaTo"/> 
-    </div>
+        <template #cta>
+            <FeatureSlideCTA :to="ctaTo" :text="linkText" />
+        </template>
+    </FeatureSlideLayout>
 </template>

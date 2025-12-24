@@ -1,9 +1,7 @@
 <script setup>
-import FlagIcon from '@components/ui/FlagIcon.vue';
-import DollarWallet from '@images/dollar-accounts/dollar_wallet.png'
 import CtaLink from '@components/features/ui/CtaLink.vue';
-
-const countryCode = 'us';
+import PreciousMetal from '@images/precious-metals/precious-metal.png';
+import goldBars from '@images/precious-metals/gold-bars.png';
 
 defineProps({
     title: String,
@@ -12,6 +10,7 @@ defineProps({
     linkText: String
 });
 </script>
+
 <template>
     <div class="h-full w-full
       rounded-2xl bg-card-surface text-white shadow-sm
@@ -25,11 +24,9 @@ defineProps({
       lg:mx-auto">
         <div class="flex items-start justify-between gap-4">
             <div class="flex-1">
-                <!-- Flag Row -->
                 <div class="mb-3 flex items-center gap-3">
-                    <!-- US Flag -->
-                    <div class="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full">
-                        <FlagIcon :country-code="countryCode" />
+                    <div class="flex h-7 w-7 items-center justify-center overflow-hidden">
+                        <img :src="PreciousMetal" alt="precious metals" />
                     </div>
                 </div>
 
@@ -45,8 +42,8 @@ defineProps({
 
             <div class="shrink-0">
                 <img
-                    :src="DollarWallet"
-                    alt="Dollar account illustration"
+                    :src="goldBars"
+                    alt="Precious metal gold bars"
                     class="h-20 w-20"
                 />
             </div>

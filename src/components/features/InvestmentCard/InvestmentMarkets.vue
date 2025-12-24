@@ -1,14 +1,10 @@
 <script setup>
-import { InvestmentImages } from '@images/investments';
-
-console.log(InvestmentImages);
-
 defineProps({
     markets: {
         type: Array,
         required: true
     }
-})
+});
 </script>
 
 <template>

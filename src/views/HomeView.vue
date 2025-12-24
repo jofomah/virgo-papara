@@ -6,6 +6,8 @@ import CarouselItem from '@components/carousel/CarouselItem.vue';
 import Account from '@components/features/AccountCard/Account.vue';
 import InvestmentAccount from '@components/features/InvestmentCard/InvestmentAccount.vue';
 import DollarAccount from '@components/features/DollarAccount/DollarAccount.vue';
+import PreciousMetalAccount from '@components/features/PreciousMetalAccount/PreciousMetalAccount.vue';
+
 import { InvestmentImages } from '@images/investments';
 
 import AppStories from '@components/stories/AppStories.vue';
@@ -36,7 +38,7 @@ const carouselItems = [
                 { title: 'NYSE', img: InvestmentImages.nyse },
                 { title: 'Borsa İstanbul', img: InvestmentImages.borsa }
             ],
-            ctaTo: "/investment/create",
+            ctaTo: "",
             linkText: 'Yatırım Hesabı Oluştur'
         }
     },
@@ -46,18 +48,27 @@ const carouselItems = [
         data: {
             title: "Dollar Hesabı",
             subtitle: "Yatırım işlemleri için dolar al / sat.",
-            ctaTo: "/dollar-account/create",
+            ctaTo: "",
             linkText: 'Yatırım Hesabı Oluştur'
         }
     },
-    { id: 4, type: 'investment', data: { number: '**** 1234' } },
-    //{ id: 3, type: 'promo', data: { title: 'Cashback' } }
+    {
+        id: 4,
+        type: 'precious_metal',
+        data: {
+            title: 'Kıymetli Madenler',
+            subtitle: '(Altın, Gümüş, Platin)',
+            ctaTo: '',
+            linkText: 'Kıymetli Madenler Hesabı Aç'
+        }
+    },
 ];
 
 const componentMap = {
     account: Account,
     investment: InvestmentAccount,
-    dollar_account: DollarAccount
+    dollar_account: DollarAccount,
+    precious_metal: PreciousMetalAccount
 }
 
 </script>
@@ -67,7 +78,7 @@ const componentMap = {
 
     <section class="w-full px-4 mb-6">
         <Carousel :items="carouselItems" :peek="true">
-            <CarouselItem v-for="item in carouselItems" :key="item.id">
+            <CarouselItem v-for="item in carouselItems" :key="item.type">
                 <component :is="componentMap[item.type]" v-bind="item.data" />
             </CarouselItem>
         </Carousel>

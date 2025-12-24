@@ -2,8 +2,6 @@
 import StoryItem from '@components/stories/StoryItem.vue';
 import { storyImages } from '@images/app-stories/StoryImages'
 
-console.log(storyImages);
-
 defineProps({
   stories: {
     type: Array,
